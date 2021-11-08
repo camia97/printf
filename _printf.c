@@ -1,43 +1,44 @@
 #include "main.h"
 #include <stdarg.h>
 #include <stdlib.h>
-
-int _printf(cons char *format, ...)
+/**
+ * _printf - prints according to a format
+ * @format: 
+ */
+int _printf(const char *format, ...)
 {
-	int counter:x;
-	char *ele, *artype;
-
+	int counter, pos_op, length;
 	va_list ele;
 
-	pstrust artype[]={
-	{"c", op_pchar}
-	{"s", op_pstring}
-/*	{"d",op_pdecimal}
-	{"i", op_pinterger}
-	{"b", op_pbinary}
-	{"u", op_punsign}
-	{"o", op_poctal}
-	{"x", op_phexalow}
-	{"X", op_phexaup}
- 	{"+", op_pplus}
- 	{"#", op_palt}
- 	{"l", op_pl}
-	{"h", op_ph}
- */
-	{NULL, NULL}
-};
+	pstruct artype[] = {
+		{"c", op_pchar},
+		{"s", op_pstring},
+		{NULL, NULL}
+	}; 
 va_start(ele, format);
-for (counter = 0; format[counter]!= NULL; counter++)
+for (counter = 0; format[counter]; counter++)
 {
 	if (format[counter] =='%')
-	{
+{
 		counter++;
-		for (pos_op = 0; artype[pos_op] != NULL; pos_op++)
+		if (format[counter] == '%')
 		{
-			if (format[counter == artype[pos_op].op_op[0])
-				artype[pos_op].f(ele);
-
+			length++;
+			_putchar('%');
+			continue;
 		}
-	}	
+		for (pos_op = 0; artype[pos_op].op_op; pos_op++)
+		{
+			if (format[counter] == artype[pos_op].op_op[0])
+				length += artype[pos_op].f(ele);
+		}
+	}
+	else
+{
+		_putchar(format[counter]);
+		length++;
 }
-
+}
+va_end(ele);
+return (length);
+}
