@@ -8,8 +8,8 @@ pstruct fstruc(int j)
 {
 pstruct artype[] = {
 	{"c", op_pchar},
- 	{"s", op_pstring},
+	{"s", op_pstring},
 	{NULL, NULL}
- };
+};
 	return (artype[j]);
 }
