@@ -11,11 +11,6 @@ int _printf(const char *format, ...)
 	int counter, pos_op, length;
 	va_list ele;
 
-	pstruct artype[] = {
-		{"c", op_pchar},
-		{"s", op_pstring},
-		{NULL, NULL}
-	};
 	va_start(ele, format);
 	for (counter = 0; format[counter]; counter++)
 	{
@@ -28,10 +23,10 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				continue;
 			}
-		for (pos_op = 0; artype[pos_op].op_op; pos_op++)
+		for (pos_op = 0; fstruc(pos_op).op_op; pos_op++)
 		{
-			if (format[counter] == artype[pos_op].op_op[0])
-				length += artype[pos_op].f(ele);
+			if (format[counter] == fstruc(pos_op).op_op[0])
+				length += fstruc(pos_op).f(ele);
 		}
 	}
 	else
