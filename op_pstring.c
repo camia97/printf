@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdarg.h>
-/*
+/**
  * op_pstring - prints string
  * @ele: list of arguments
  * Return: largo of string

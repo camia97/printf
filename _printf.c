@@ -3,7 +3,8 @@
 #include <stdlib.h>
 /**
  * _printf - prints according to a format
- * @format: 
+ * @format: pointer to character string
+ * Return: length of string
  */
 int _printf(const char *format, ...)
 {
@@ -14,11 +15,11 @@ int _printf(const char *format, ...)
 		{"c", op_pchar},
 		{"s", op_pstring},
 		{NULL, NULL}
-	}; 
+	};
 va_start(ele, format);
 for (counter = 0; format[counter]; counter++)
 {
-	if (format[counter] =='%')
+	if (format[counter] == '%')
 {
 		counter++;
 		if (format[counter] == '%')
