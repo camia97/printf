@@ -13,12 +13,7 @@ int op_pstring(va_list ele)
 
 	str = va_arg(ele, char *);
 	if (str)
-	{
 		for (largo = 0; str[largo]; largo++)
-		{
 			_putchar(str[largo]);
-			largo++;
-		}
-	}
 	return (largo);
 }
