@@ -28,11 +28,13 @@ int _printf(const char *format, ...)
 				continue;
 			}
 		for (pos_op = 0; fstruc(pos_op).op_op; pos_op++)
+		{
 			if (format[counter] == fstruc(pos_op).op_op[0])
 			{
 				length += fstruc(pos_op).f(ele);
 				break;
 			}
+		}
 		if (!fstruc(pos_op).op_op)
 		{
 			_putchar(format[counter]);
