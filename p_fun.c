@@ -77,6 +77,7 @@ int dig(int d)
 	if (d < 0)
 	{
 		_putchar('-');
+		larg++;
 		d = -d;
 	}
 	if (d / 10)
