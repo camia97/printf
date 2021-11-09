@@ -23,4 +23,5 @@ int op_pstring(va_list ele);
 int op_pdig(va_list ele);
 int dig(int d);
 pstruct fstruc(int j);
+
 #endif

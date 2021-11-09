@@ -1,5 +1,4 @@
 #include "main.h"
-#include "main.h"
 /**
  * op_pchar - print a char
  * @a: list of arguments
@@ -12,9 +11,7 @@ int op_pchar(va_list a)
 	_putchar(c);
 	return (1);
 }
-#include "main.h"
-#include <stdlib.h>
-#include <stdarg.h>
+
 /**
  * op_pstring - prints string
  * @ele: list of arguments
@@ -34,7 +31,6 @@ int op_pstring(va_list ele)
 
 	return (largo);
 }
-#include <unistd.h>
 
 /**
  * _putchar - writes the character c to stdout
@@ -47,7 +43,6 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
-#include "main.h"
 /**
  * fstruc - function of struct
  * @j: int pos the struct
@@ -64,27 +59,28 @@ pstruct artype[] = {
 };
 	return (artype[j]);
 }
-#include "main.h"
 /**
  * dig - print a digit
  * @d: int
  * Return: larg of the digit
  */
 int dig(int d)
-{
-	int larg = 0;
+{	unsigned int aux = 0;
+	int largo = 0;
 
 	if (d < 0)
 	{
 		_putchar('-');
-		larg++;
-		d = -d;
+		largo++;
+		aux = -d;
 	}
+	else
+		aux = d;
 	if (d / 10)
 	{
-		larg += dig(d / 10);
+		largo += dig(aux / 10);
 	}
-	_putchar(d % 10 + '0');
-	larg++;
-	return (larg);
+	_putchar(aux % 10 + '0');
+	largo++;
+	return (largo);
 }
