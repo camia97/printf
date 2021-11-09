@@ -12,6 +12,8 @@ int _printf(const char *format, ...)
 	va_list ele;
 
 	va_start(ele, format);
+	if (!format)
+		return (-1);
 	for (counter = 0; format[counter]; counter++)
 	{
 		if (format[counter] == '%' && format[counter + 1] == '\0')
