@@ -26,9 +26,9 @@ int op_pbin(va_list ele)
  * @n: int
  * Return: larg
  */
-int rec_bin(int n)
+int rec_bin(unsigned int n)
 {
-	int larg = 0;
+	unsigned int larg = 0;
 
 	if (n >= 1)
 	{
