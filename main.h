@@ -22,6 +22,8 @@ int _strcmp(char *s1, char *s2);
 int op_pstring(va_list ele);
 int op_pdig(va_list ele);
 int dig(int d);
+int op_pbin(va_list ele);
+int rec_bin(int n);
 pstruct fstruc(int j);
 
 #endif
