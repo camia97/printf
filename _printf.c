@@ -16,11 +16,11 @@ int _printf(const char *format, ...)
 		return (-1);
 	for (counter = 0; format[counter]; counter++)
 	{
-		if (format[counter] == '%' && format[counter + 1] == '\0')
+		if (!ele || (format[counter] == '%' && format[counter + 1] == '\0'))
 			return (-1);
 		if (format[counter] == '%')
 		{
-			if (format[counter + 1] == '%')
+			if (format[counter + 1] && format[counter + 1] == '%')
 			{
 				length++;
 				_putchar(format[counter + 1]);
