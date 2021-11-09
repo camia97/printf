@@ -20,5 +20,7 @@ char *str_concat(char *s1, char *s2);
 int _putchar(char c);
 int _strcmp(char *s1, char *s2);
 int op_pstring(va_list ele);
+int op_pdig(va_list ele);
+int dig(int d);
 pstruct fstruc(int j);
 #endif
