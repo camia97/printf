@@ -18,6 +18,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[counter] == '%' && format[counter + 1] == '\0')
 		{
+			_putchar(format[counter]);
 			return (-1);
 		}
 		if (format[counter] == '%')
@@ -26,7 +27,7 @@ int _printf(const char *format, ...)
 			if (format[counter] == '%')
 			{
 				length++;
-				_putchar('%');
+				_putchar(format[counter]);
 				continue;
 			}
 		for (pos_op = 0; fstruc(pos_op).op_op; pos_op++)
