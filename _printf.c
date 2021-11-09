@@ -8,7 +8,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int counter, pos_op, length;
+	int counter, pos_op, length = 0;
 	va_list ele;
 
 	va_start(ele, format);
@@ -20,32 +20,31 @@ int _printf(const char *format, ...)
 			return (-1);
 		if (format[counter] == '%')
 		{
-			counter++;
-			if (format[counter] == '%')
+			if (format[counter + 1] == '%')
 			{
 				length++;
-				_putchar(format[counter]);
+				_putchar(format[counter + 1]);
+				counter++;
 				continue;
 			}
-		for (pos_op = 0; fstruc(pos_op).op_op; pos_op++)
-		{
-			if (format[counter] == fstruc(pos_op).op_op[0])
+			for (pos_op = 0; fstruc(pos_op).op_op; pos_op++)
+				if (format[counter + 1] == fstruc(pos_op).op_op[0])
+				{
+					length += fstruc(pos_op).f(ele);
+					counter++;
+					break;
+				}
+			if (fstruc(pos_op).op_op == NULL)
 			{
-				length += fstruc(pos_op).f(ele);
-				break;
+				_putchar(format[counter]);
+				length++;
 			}
 		}
-		if (!fstruc(pos_op).op_op)
+		else
 		{
 			_putchar(format[counter]);
 			length++;
 		}
-		}
-	else
-	{
-		_putchar(format[counter]);
-		length++;
-	}
 	}
 	va_end(ele);
 	return (length);
