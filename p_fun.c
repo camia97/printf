@@ -66,7 +66,7 @@ pstruct artype[] = {
 }
 #include "main.h"
 /**
- * op_pdig - print a digit
+ * dig - print a digit
  * @d: int
  * Return: larg of the digit
  */
@@ -77,7 +77,7 @@ int dig(int d)
 	if (d < 0)
 	{
 		_putchar('-');
-		d = - d;
+		d = -d;
 	}
 	if (d / 10)
 	{
