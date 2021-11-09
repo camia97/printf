@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * fstruc - function of struct
- * @j: int
+ * @j: int pos the struct
  * Return: struct
  */
 pstruct fstruc(int j)

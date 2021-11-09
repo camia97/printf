@@ -15,5 +15,8 @@ int op_pstring(va_list ele)
 	if (str)
 		for (largo = 0; str[largo]; largo++)
 			_putchar(str[largo]);
+	else
+		largo = _printf("(null)");
+
 	return (largo);
 }
