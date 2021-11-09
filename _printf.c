@@ -14,8 +14,12 @@ int _printf(const char *format, ...)
 	va_start(ele, format);
 	for (counter = 0; format[counter]; counter++)
 	{
+		if (format[counter] == '%' && format[counter + 1] == '\0')
+		{
+			return (-1);
+		}		
 		if (format[counter] == '%')
-	{
+		{
 			counter++;
 			if (format[counter] == '%')
 			{
@@ -28,7 +32,7 @@ int _printf(const char *format, ...)
 			if (format[counter] == fstruc(pos_op).op_op[0])
 				length += fstruc(pos_op).f(ele);
 		}
-	}
+		}
 	else
 	{
 		_putchar(format[counter]);
