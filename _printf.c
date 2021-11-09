@@ -16,10 +16,10 @@ int _printf(const char *format, ...)
 		return (-1);
 	for (counter = 0; format[counter]; counter++)
 	{
-		if (format[counter] == '%' && format[counter + 1] == '\0')
-			return (-1);
 		if (format[counter] == '%')
 		{
+			if (!format[counter + 1])
+				return (-1);
 			if (format[counter + 1] == '%')
 			{
 				length++;
@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 					counter++;
 					break;
 				}
-			if (fstruc(pos_op).op_op == NULL)
+			if (!fstruc(pos_op).op_op)
 			{
 				_putchar(format[counter]);
 				length++;
