@@ -14,6 +14,8 @@ typedef struct printable
 	char *op_op;
 	int (*f)(va_list ele);
 } pstruct;
+int op_pbinary(va_list ele);
+int convert(int n, int base);
 int op_pchar(va_list a);
 int _printf(const char *format, ...);
 char *str_concat(char *s1, char *s2);

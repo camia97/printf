@@ -57,6 +57,7 @@ pstruct artype[] = {
 	{"i", op_pdig},
 	{"b", op_pbin},
 	{"r", op_prev},
+	{"b", op_pbinary},
 	{NULL, NULL}
 };
 	return (artype[j]);
