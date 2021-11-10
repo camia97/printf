@@ -40,3 +40,19 @@ int rec_bin(unsigned int n)
 		return (-1);
 	return (larg);
 }
+/**
+ *
+ *
+ *
+ */
+int op_prev(va_list ele)
+{
+	char *aux = va_arg(ele, char *);
+	int larg, rev;
+
+	for (larg = 0; aux[larg]; larg++)
+		;
+	for (rev = larg - 1; rev >= 0; rev--)
+		_putchar(aux[rev]);
+	return (larg);
+}

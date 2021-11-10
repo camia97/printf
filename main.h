@@ -25,5 +25,6 @@ int dig(int d);
 int op_pbin(va_list ele);
 int rec_bin(unsigned int n);
 pstruct fstruc(int j);
+int op_prev(va_list ele);
 
 #endif
