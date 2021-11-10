@@ -1,0 +1,108 @@
+.TH 2021-11-09 LINUX
+
+.SH NAME
+.B _printf
+
+.SH SYNOPSIS
+.TP
+#include "main.h"
+.BRint _printf(const char *format, ...)
+
+.SH DESCRIPTION
+.B _printf
+.IP
+printf is a C function belonging to the ANSI C standard library, and included in the file stdio.h.
+Its purpose is to print formatted text to the standard output stream. Hence the "f" in the name stands for "formatted". 
+
+printf is a special function because it receives a variable number of arguments. The first parameter is fixed and is the format string.
+It includes text to be printed literaly and marks to be replaced by the text obtained from the additional parameters.
+Thus, printf is invoked with as many parameters as marks are included in the format string, plus one (the format string itself).
+
+.SH SYNTAX (example)
+.IP
+.BR	printf(string format, items-to-format)
+
+An integer can be printed using the "%d" formatting code taking the "42" as a text prints it to the standard output.
+ 
+	 printf("%d", 42);
+
+printf is typically the first function any C programmer encounters, because it is the only function which appears in the standard Hello world program:
+
+	#include <stdio.h>
+
+	int main(void)
+	{
+		printf("Hello, world!\n");
+		return 0;
+	}
+
+The "Hello world" program uses printf in its simplest form: by simply passing it a string with no special formatting codes, and no extra arguments.
+The input text is simply printed to the screen. (Note that the "\n" special escape sequence is converted into a newline character.
+
+.SH EXAMPLES
+.IP	Input
+
+	#include <stdio.h>
+	main() {
+   	char ch = 'B';
+   	printf("%c\n", ch); //printing character data
+   	//print decimal or integer data with d and i
+   	int x = 45, y = 90;
+   	printf("%d\n", x);
+   	printf("%i\n", y);
+   	float f = 12.67;
+   	printf("%f\n", f); //print float value
+   	printf("%e\n", f); //print in scientific notation
+   	int a = 67;
+   	printf("%o\n", a); //print in octal format
+   	printf("%x\n", a); //print in hex format
+   	char str[] = "Hello World";
+   	printf("%s\n", str);
+   	printf("%20s\n", str); //shift to the right 20 characters including the string
+   	printf("%-20s\n", str); //left align
+   	printf("%20.5s\n", str); //shift to the right 20 characters including the string,
+	 and print string up to 5 character
+   	printf("%-20.5s\n", str); //left align and print string up to 5 character
+	}
+
+	Output
+
+	B
+	45
+	90
+	12.670000
+	1.267000e+001
+	103
+	43
+	Hello World
+	Hello World
+	Hello World
+	Hello
+	Hello
+
+.SH OPTIONS (used)
+.IP 
+\-Ordinary characters (not %): are copied unchanged to the output streng.
+.IP
+ \-Conversion & specification:Each conversion specification is introduced by the character "%" and end with a conversion specifier. The overall syntax of a conversion specification is:
+.IP
+ 	%[conversion specifier].
+.IP
+.BConversion specifiers
+.IP 
+c: Prints a single character
+.IP 
+s: Prints a string of characters.
+.IP 
+i: The i argument is converted to signed decimal notation. Prints a integer in base 10.
+.IP 
+d: The d argument is converted to signed decimal notation. Prints a decimal number.
+
+.SH SEE ALSO
+
+.SH RETURN
+Upon successful return, these functions return the number of
+characters printed (excluding the null byte used to end output to strings).
+
+.SH AUTHOR
+Written by Camila Abdala and Lucila Mociulky
