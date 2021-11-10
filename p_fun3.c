@@ -27,9 +27,9 @@ int convert(int n, int base)
 	if (n / base)
 	{
 		largo += convert((n / base), base);
-		_putchar (res + '0');
 		largo++;
 	}
+	_putchar(res + '0');
 	}
 	return (largo);
 }
