@@ -41,9 +41,9 @@ int rec_bin(unsigned int n)
 	return (larg);
 }
 /**
- *
- *
- *
+ * op_prev - reverse a string
+ * @ele: list of arguments
+ * Return: length of string
  */
 int op_prev(va_list ele)
 {
