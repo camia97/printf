@@ -24,12 +24,12 @@ int convert(int n, int base)
 
 	if (n != 0)
 	{
-	if (n / base)
-	{
-		largo += convert((n / base), base);
 		largo++;
-	}
-	_putchar(res + '0');
+		if (n / base)
+		{
+			largo += convert((n / base), base);
+		}
+		_putchar(res + '0');
 	}
 	return (largo);
 }
@@ -45,11 +45,13 @@ int op_rot13(va_list ele)
 
 	for (counter = 0; aux[counter]; counter++)
 	{
-		if ((aux[counter] >= 78 && aux[counter] <= 90) || (aux[counter] >= 110 && aux[counter] <= 122))
+		if ((aux[counter] >= 78 && aux[counter] <= 90) ||
+				(aux[counter] >= 110 && aux[counter] <= 122))
 		{
 			_putchar(aux[counter] - 13);
 		}
-		else if ((aux[counter] >= 65 && aux[counter] < 78) || (aux[counter] >= 97 && aux[counter] < 110))
+		else if ((aux[counter] >= 65 && aux[counter] < 78) ||
+				(aux[counter] >= 97 && aux[counter] < 110))
 		{
 			_putchar(aux[counter] + 13);
 		}
