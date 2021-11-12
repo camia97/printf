@@ -55,7 +55,6 @@ pstruct artype[] = {
 	{"s", op_pstring},
 	{"d", op_pdig},
 	{"i", op_pdig},
-	{"b", op_pbin},
 	{"r", op_prev},
 	{"b", op_pbinary},
 	{"R", op_rot13},
