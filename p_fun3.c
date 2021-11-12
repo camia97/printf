@@ -33,3 +33,28 @@ int convert(int n, int base)
 	}
 	return (largo);
 }
+/**
+ * op_rot13 - custom conversion specifier
+ * @ele: list of arguments
+ * Return: number of chars
+ */
+int op_rot13(va_list ele)
+{
+	char *aux = va_arg(ele, char *);
+	int counter;
+
+	for (counter = 0; aux[counter]; counter++)
+	{
+		if ((aux[counter] >= 78 && aux[counter] <= 90) || (aux[counter] >= 110 && aux[counter] <= 122))
+		{
+			_putchar(aux[counter] - 13);
+		}
+		else if ((aux[counter] >= 65 && aux[counter] < 78) || (aux[counter] >= 97 && aux[counter] < 110))
+		{
+			_putchar(aux[counter] + 13);
+		}
+		else
+			_putchar(aux[counter]);
+	}
+	return (counter);
+}
